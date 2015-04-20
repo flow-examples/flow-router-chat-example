@@ -1,0 +1,47 @@
+<template name="layout">
+
+   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">      
+            
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">iChat</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                
+                <ul class="nav navbar-nav">
+                    <!--li class="active"><a href="#">Home</a></li-->
+                    <li><a href="/about">About</a></li>
+                    {{#if loggedIn}}<li><a href="/sign-out">Close the Session</a></li>{{/if}}
+                </ul>
+                
+            </div><!--.nav-collapse -->
+
+        </div>
+    
+    </nav>
+
+    <div class="container">
+
+        <div class="starter-template">  
+
+        	{{> Template.dynamic template=template}}
+
+        </div>
+
+    </div>
+    
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&equiv; 2015 &bull; Ind</p>
+      </div>
+    </footer>
+
+</template>
