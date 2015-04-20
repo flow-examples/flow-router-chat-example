@@ -26,6 +26,10 @@ statcPageComponent.state.message = function(){
 var headerComponent = FlowComponents.define('header',function(props){
 });
 
+headerComponent.state.loggedIn = function(){
+	return Session.get('loggedIn');
+};
+
 //mainComponent
 var mainComponent = FlowComponents.define('main',function(props){
 	this.set('template',props.template)
@@ -43,6 +47,26 @@ var footerComponent = FlowComponents.define('footer',function(props){
 var loginComponent = FlowComponents.define('login',function(props){
 });
 
+loginComponent.action.onSubmit = function(pwd) {
+	// Check for existing record.
+    recExists = People.findOne({screen_name: Session.get('screenName'), password:pwd});
+    
+    if (!recExists) {
+        // Insert Databse
+        count = People.find().count();
+        count++;
+
+        People.insert({
+            id: count,
+            screen_name: screenName,
+            password: pwd,
+            login_status: 1
+        });
+    }
+
+    FlowRouter.go('/room');
+};
+
 //roomComponent
 var roomComponent = FlowComponents.define('room',function(props){
 });
@@ -51,10 +75,34 @@ var roomComponent = FlowComponents.define('room',function(props){
 var whosOnlineComponent = FlowComponents.define('whosOnline',function(props){
 });
 
+whosOnlineComponent.state.people = function(){
+	return People.find();
+};
+
 //editorComponent
 var editorComponent = FlowComponents.define('editor',function(props){
 });
 
+editorComponent.state.screenName = function(){
+	return Session.get('screenName');
+};
+
+editorComponent.action.onSubmit = function(chatMsg) {
+	// Insert Databse
+	count = Discussion.find().count();
+	count++;
+
+	Discussion.insert({
+	    id: count,
+	    screen_name: Session.get('screenName'),
+	    msg: chatMsg
+	});
+};
+
 //discussionComponent
 var discussionComponent = FlowComponents.define('discussion',function(props){
 });
+
+discussionComponent.state.discussion = function(){
+	return Discussion.find({}, {sort: {id: -1}});
+};
