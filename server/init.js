@@ -1,5 +1,4 @@
-if (People.find().count() === 0)
-{
+if (People.find().count() === 0){
     People.insert({
         id:1,
         screen_name: 'admin',
@@ -8,8 +7,7 @@ if (People.find().count() === 0)
     });
 }
 
-if (Discussion.find().count() === 0)
-{
+if (Discussion.find().count() === 0){
     Discussion.insert({
         id:1,
         screen_name: 'admin',

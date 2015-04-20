@@ -2,7 +2,6 @@
 //Meteor.subscribe('Discussion');
 
 Template.room.helpers({
-    
     screenName: function() { return Session.get('screenName'); },
     people: function() {
         return People.find();
@@ -10,7 +9,6 @@ Template.room.helpers({
     discussion: function() {
         return Discussion.find({}, {sort: {id: -1}});
     }
-    
 });
 
 Template.room.events({ 'submit form': function(e) {
@@ -27,8 +25,5 @@ Template.room.events({ 'submit form': function(e) {
         screen_name: Session.get('screenName'),
         msg: chatMsg
     });
-    
-    //Router.go('homeTemplate');
-    
   }
 });
