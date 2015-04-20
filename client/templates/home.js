@@ -11,8 +11,7 @@ Template.home.events({ 'submit form': function(e) {
     // Check for existing record.
     recExists = People.findOne({screen_name: screenName, password:pwd});
     
-    if ( ! recExists )
-    {
+    if (!recExists) {
         // Insert Databse
         count = People.find().count();
         count++;
