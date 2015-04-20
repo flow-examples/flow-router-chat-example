@@ -1,4 +1,4 @@
-Template.home.events({ 'submit form': function(e) {
+Template.login.events({ 'submit form': function(e) {
     e.preventDefault();
     
     screenName = $(e.target).find('[name=screen-name]').val();
