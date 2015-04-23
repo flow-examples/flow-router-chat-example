@@ -2,9 +2,7 @@
   <div id="whos-online" class="col-md-4">
     <p><strong>Who's Online</strong></p>
     <div id="people-loader" class="loader">
-      <img src="images/loader.gif" />
-      <br/>
-      loading..
+      {{> render component="loader"}}
     </div>
     <ul id="people" class="list-group">
       {{#each state$people}}

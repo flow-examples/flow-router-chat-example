@@ -1,8 +1,7 @@
 <template name="discussion">
+  {{isLoading}}
   <div id="msg-loader" class="ajax-loader">
-      <img src="images/loader.gif" />
-      <br/>
-      loading..
+    {{> render component="loader"}}
   </div>
   <div id="msgs">
     {{#each state$discussion}}
