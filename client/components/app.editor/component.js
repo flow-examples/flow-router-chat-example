@@ -12,8 +12,8 @@ editorComponent.action.onSubmit = function(chatMsg) {
 	count++;
 
 	Discussion.insert({
-	    id: count,
-	    screen_name: Session.get('screenName'),
-	    msg: chatMsg
+    id: count,
+    screen_name: Session.get('screenName'),
+    msg: chatMsg
 	});
 };

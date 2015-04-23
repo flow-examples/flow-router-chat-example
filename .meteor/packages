@@ -13,3 +13,7 @@ meteorhacks:fast-render
 twbs:bootstrap
 sacha:spin
 meteorhacks:flow-components
+accounts-github
+accounts-ui
+http
+service-configuration

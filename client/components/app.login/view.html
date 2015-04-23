@@ -1,15 +1,11 @@
 <template name="login">
-    <form class="form-inline">        
-        <div class="form-group">
-            <label for="screen-name"></label>
-            <input type="text" class="form-control" id="screen-name" name="screen-name" placeholder="Screen Name" required>
-        </div>
-        <div class="form-group">
-            <label for="pwd"></label>
-            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">ENTER</button>
-    </form>
+    {{#if currentUser}}
+        <p><img src="{{currentUser.profile.avatar_url}}" class="img-rounded" style="width:100px" /></p>
+        {{currentUser.profile.name}}
+        <p><a href="/room">[ENTER]</a></p>
+    {{else}}
+        <img class="login-btn" src="images/login_with_github.png" />
+    {{/if}}
     
     <style>
     .footer {
