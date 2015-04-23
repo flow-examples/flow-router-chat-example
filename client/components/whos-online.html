@@ -1,0 +1,14 @@
+<template name="whosOnline">
+    <div id="whos-online" class="col-md-4">
+        <p><strong>Who's Online</strong></p>
+        <ul class="list-group">
+            {{#each state$people}}
+                {{#if login_status}}
+                    <li class="list-group-item"><span class="glyphicon glyphicon-star"></span> {{screen_name}}</li>
+                {{else}}
+                    <li class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span> {{screen_name}}</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div> <!--/whos-online-->
+</template>
