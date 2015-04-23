@@ -8,12 +8,6 @@ loginComponent.state.isLoggedIn = function(){
   }
 };
 
-loginComponent.state.isLoggedIn = function(){
-  if( Meteor.user() ){
-    return true;
-  }
-};
-
 loginComponent.state.profileName = function(){
   return Meteor.user().profile.name;
 };

@@ -12,7 +12,10 @@ Template['editor'].events({
     Meteor.logout(function(err) {
       if(err){
       }else{
-        //we will do something in here with the username
+        //update login_status on DB
+        screenName = Session.get('screenName');
+        var person = People.findOne({screen_name:screenName});
+        People.update({_id: person._id}, {$set: {login_status: 0}});
       }
     });
     FlowRouter.go('/');

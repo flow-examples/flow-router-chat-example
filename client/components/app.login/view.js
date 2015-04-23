@@ -12,6 +12,23 @@ function loginFn(){
       //error handling
     }else{
       //user create here! ;)
+      if(Meteor.user()) {
+        screenName = Meteor.user().services.github.username;
+        Session.set('screenName', screenName);
+        //check user already in the db
+        recExists = People.findOne({screen_name: Session.get('screenName')});
+        if (!recExists) {
+          // Insert Databse
+          count = People.find().count();
+          count++;
+
+          People.insert({
+              id: count,
+              screen_name: screenName,
+              login_status: 1
+          });
+        }
+      }
     }
   });
 }

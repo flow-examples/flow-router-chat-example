@@ -1,9 +1,13 @@
 <template name="room">
-  <div class="row">
-  {{> render component="whosOnline"}}
-  <div id="chat-pane" class="col-md-8">
-    {{> render component="editor"}}
-    {{> render component="discussion"}}
-  </div> <!--/chat-pane-->
-  </div>
+  {{#if state$isLoggedIn}}
+    <div class="row">
+      {{> render component="whosOnline"}}
+      <div id="chat-pane" class="col-md-8">
+        {{> render component="editor"}}
+        {{> render component="discussion"}}
+      </div> <!--/chat-pane-->
+    </div>
+  {{else}}
+    {{> render component="login"}}
+  {{/if}}
 </template>
