@@ -1,6 +1,6 @@
 Template['login'].events({
   "click .login-btn": function(e) {
-  	loginFn();
+    loginFn();
   }
 });
 

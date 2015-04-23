@@ -1,10 +1,10 @@
 <template name="discussion">
-	<div id="msgs">
+  <div id="msgs">
     {{#each state$discussion}}
       <blockquote>
         <p>{{msg}}</p>
         <footer>{{screen_name}}</footer>
       </blockquote>
     {{/each}}
-	</div> <!--/msgs-->
+  </div> <!--/msgs-->
 </template>

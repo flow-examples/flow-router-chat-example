@@ -1,5 +1,5 @@
 ServiceConfiguration.configurations.remove({
-  	service : 'github'
+  service : 'github'
 });
 
 ServiceConfiguration.configurations.insert({

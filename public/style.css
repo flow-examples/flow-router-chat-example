@@ -1,5 +1,5 @@
 body {
-	padding-top:50px;
+  padding-top:50px;
 }
 
 .navbar-header {
@@ -12,8 +12,8 @@ body {
 .navbar-brand {float:none;}
 
 .starter-template {
-	padding:40px 15px;
-	text-align:center;
+  padding:40px 15px;
+  text-align:center;
 }
 
 .footer {

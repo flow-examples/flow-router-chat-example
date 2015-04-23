@@ -1,15 +1,9 @@
 <template name="login">
-    {{#if currentUser}}
-        <p><img src="{{currentUser.profile.avatar_url}}" class="img-rounded" style="width:100px" /></p>
-        {{currentUser.profile.name}}
-        <p><a href="/room">[ENTER]</a></p>
-    {{else}}
-        <img class="login-btn" src="images/login_with_github.png" />
-    {{/if}}
-    
-    <style>
-    .footer {
-        position: absolute;
-    }
-    </style>
+  {{#if state$isLoggedIn}}
+    <p><img src="{{state$profileAvatarURL}}" class="img-rounded" style="width:100px" /></p>
+    {{state$profileName}}
+    <p><a href="/room">[ENTER]</a></p>
+  {{else}}
+    <img class="login-btn" src="images/login_with_github.png" />
+  {{/if}}
 </template>
