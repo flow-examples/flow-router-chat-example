@@ -28,6 +28,11 @@ function loginFn(){
               login_status: 1
           });
         }
+        else
+        {
+          var person = People.findOne({screen_name:screenName});
+          People.update({_id: person._id}, {$set: {login_status: 1}});
+        }
       }
     }
   });
