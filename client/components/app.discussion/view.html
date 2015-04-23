@@ -1,4 +1,9 @@
 <template name="discussion">
+  <div id="msg-ajax-loader" class="ajax-loader">
+    <img src="images/ajax-loader.gif" />
+    <br/>
+    loading..
+  </div>
   <div id="msgs">
     {{#each state$discussion}}
       <blockquote>

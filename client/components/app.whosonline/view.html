@@ -1,7 +1,12 @@
 <template name="whosOnline">
   <div id="whos-online" class="col-md-4">
     <p><strong>Who's Online</strong></p>
-    <ul class="list-group">
+    <div id="people-ajax-loader" class="ajax-loader">
+      <img src="images/ajax-loader.gif" />
+      <br/>
+      loading..
+    </div>
+    <ul id="people" class="list-group">
       {{#each state$people}}
         {{#if login_status}}
           <li class="list-group-item"><span class="glyphicon glyphicon-star"></span> {{screen_name}}</li>

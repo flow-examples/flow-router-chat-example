@@ -7,13 +7,15 @@ editorComponent.state.screenName = function(){
 };
 
 editorComponent.action.addDiscussion = function(chatMsg) {
-  // Insert Databse
-  count = Discussion.find().count();
-  count++;
+  if($.trim(chatMsg)!='') {
+    // Insert Databse
+    count = Discussion.find().count();
+    count++;
 
-  Discussion.insert({
-    id: count,
-    screen_name: Session.get('screenName'),
-    msg: chatMsg
-  });
+    Discussion.insert({
+      id: count,
+      screen_name: Session.get('screenName'),
+      msg: chatMsg
+    });
+  }
 };

@@ -27,3 +27,9 @@ a {
 .text-muted {
   margin: 20px 0;
 }
+#msgs {
+  display: none;
+}
+#people {
+  display: none;
+}
