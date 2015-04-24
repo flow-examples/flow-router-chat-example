@@ -6,7 +6,7 @@ Sample Chat App
 * Flow Router : meteorhacks:flow-router
 * Flow Components : meteorhacks:flow-components
 
-![alt tag](https://raw.githubusercontent.com/flow-examples/flow-router-chat-example/master/public/images/screenshot.png)
+![alt tag](public/images/screenshot.png)
 
 ## How To
 
@@ -20,7 +20,7 @@ Sample Chat App
 * Register an application as follows
 * Copy and save 'Client ID' and 'Client Secret'
 
-![alt tag](https://raw.githubusercontent.com/flow-examples/flow-router-chat-example/master/public/images/github.png)
+![alt tag](public/images/github.png)
 
 ### Step 2 : Update config.js
 
