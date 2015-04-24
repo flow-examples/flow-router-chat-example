@@ -1,14 +1,16 @@
 <template name="discussion">
-  {{isLoading}}
-  <div id="msg-loader" class="ajax-loader">
-    {{> render component="loader"}}
-  </div>
-  <div id="msgs">
-    {{#each state$discussion}}
-      <blockquote>
-        <p>{{msg}}</p>
-        <footer>{{screen_name}}</footer>
-      </blockquote>
-    {{/each}}
-  </div> <!--/msgs-->
+  {{#if state$isLoading}}
+    <div id="msg-loader" class="ajax-loader">
+      {{> render component="loader"}}
+    </div>
+  {{else}}
+    <div id="msgs">
+      {{#each state$discussion}}
+        <blockquote>
+          <p>{{msg}}</p>
+          <footer>{{screen_name}}</footer>
+        </blockquote>
+      {{/each}}
+    </div> <!--/msgs-->
+  {{/if}}
 </template>

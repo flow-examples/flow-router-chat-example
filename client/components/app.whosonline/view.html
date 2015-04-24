@@ -1,17 +1,20 @@
 <template name="whosOnline">
   <div id="whos-online" class="col-md-4">
     <p><strong>Who's Online</strong></p>
-    <div id="people-loader" class="loader">
-      {{> render component="loader"}}
-    </div>
-    <ul id="people" class="list-group">
-      {{#each state$people}}
-        {{#if login_status}}
-          <li class="list-group-item"><span class="glyphicon glyphicon-star"></span> {{screen_name}}</li>
-        {{else}}
-          <li class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span> {{screen_name}}</li>
-        {{/if}}
-      {{/each}}
-    </ul>
+    {{#if state$isLoading}}
+      <div id="people-loader" class="loader">
+        {{> render component="loader"}}
+      </div>
+    {{else}}
+      <ul id="people" class="list-group">
+        {{#each state$people}}
+          {{#if login_status}}
+            <li class="list-group-item"><span class="glyphicon glyphicon-star"></span> {{screen_name}}</li>
+          {{else}}
+            <li class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span> {{screen_name}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    {{/if}}
   </div> <!--/whos-online-->
 </template>
